@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "Amsterdamone";
+  src: url("fonts/Amsterdamone.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -1512,6 +1519,7 @@ h2#countdowntitle {
   display: none !important;
   /* forces it to stay hidden */
 }
+
 
 
 
