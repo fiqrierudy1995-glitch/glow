@@ -73,9 +73,8 @@
          <div><!-- Page 2 -->
             <div class="page2">
                <!-- Arabic Text -->
-               <p lang="ar" dir="rtl" class="arabic-text">With hearts full of love and gratitude to Almighty God,
-we,
-               </p>
+               <p lang="ar" dir="rtl" class="arabic-text">With hearts full of love and gratitude to Almighty God,<br>                                                             
+                                                       we,</p>
 
                <!-- Parent Names Section -->
                <div class="parents-group">
@@ -86,16 +85,17 @@ we,
 
                <!-- Invitation Text -->
                <p class="aluan-text">
-                  joyfully invite, Dato’/ Datin/Tuan/Puan/Encik/Cik 
-                  to share in the celebration of love and unity
-                  as we join our beloved children in marriage
+                joyfully invite, 
+                Dato’/ Datin/Tuan/Puan/Encik/Cik <br>
+                to share in the celeation of love and unity<br>
+                as we join our beloved children in marriage
                </p>
 
                <!-- Couple Names Section -->
                <div class="couple-text">
                   <p class="groom-text">Mohd Fiqrie Rudy</p>
                   <p class="and-text">&</p>
-                  <p class="bride-text">Glorianah Jacob</p>
+                  <p class="ide-text">Glorianah Jacob</p>
                </div>
 
                <!-- Venue Section -->
@@ -151,31 +151,31 @@ we,
 
             <!-- Countdown Section -->
             <div class="menghitung-hari">
-               <h2 id="countdowntitle">MENGHITUNG HARI</h2>
+               <h2 id="countdowntitle">COUNTING DAYS</h2>
 
                <div class="countdown" id="countdown-timer">
                   <div class="time-box">
                      <p id="hari">0</p>
-                     <h3>Hari</h3>
+                     <h3>Days</h3>
                   </div>
                   <div class="time-box">
                      <p id="jam">0</p>
-                     <h3>Jam</h3>
+                     <h3>Hour</h3>
                   </div>
                   <div class="time-box">
                      <p id="minit">0</p>
-                     <h3>Minit</h3>
+                     <h3>Minutes</h3>
                   </div>
                   <div class="time-box">
                      <p id="saat">0</p>
-                     <h3>Saat</h3>
+                     <h3>Seconds</h3>
                   </div>
                </div>
             </div>
          </div>
          <!-- Kehadiran -->
          <div class="kehadiran-container" style="display:none">
-            <h2>KEHADIRAN</h2>
+            <h2>ATTENDANCE</h2>
             <div class="kehadiran">
                <div class="kehadiran-box">
                   <p id="hadir">0</p>
@@ -190,7 +190,7 @@ we,
 
          <!-- Ucapan -->
          <div class="message">
-            <h2>UCAPAN</h2>
+            <h2>WISHES</h2>
             <div id="ucapanList">
             </div> <!-- This is where submitted messages will appear -->
          </div>
@@ -200,22 +200,22 @@ we,
             <div class="navgang">
                <a href="#" id="calendarBtn" class="nav-btn">
                   <span class="material-symbols-outlined">calendar_today</span>
-                  <span class="label">Kalendar</span>
+                  <span class="label">Calendar</span>
                </a>
 
                <a href="#" id="callBtn" class="nav-btn">
                   <span class="material-symbols-outlined">call</span>
-                  <span class="label">Hubungi</span>
+                  <span class="label">Contact</span>
                </a>
 
                <a href="#" id="musicToggle" class="playBtn nav-btn">
                   <span class="material-symbols-outlined">play_circle</span>
-                  <span class="label">Lagu</span>
+                  <span class="label">Audio</span>
                </a>
 
                <a href="#" id="locationBtn" class="nav-btn">
                   <span class="material-symbols-outlined">location_on</span>
-                  <span class="label">Lokasi</span>
+                  <span class="label">Location</span>
                </a>
 
                <a href="#" id="rsvpBtn" class="nav-btn">
@@ -233,7 +233,7 @@ we,
    <!-- Calendar Choice Popup -->
    <div class="popup popupcal" id="popupcal"> <!-- Overlay-->
       <div class="calendarpopup"> <!-- Box -->
-         <h3 id="heading">31 Disember 2025</h3>
+         <h3 id="heading">27 December 2025</h3>
          <p>11.00 pagi - 4.00 petang</p>
 
          <!-- Button Row Wrapper -->
@@ -259,14 +259,14 @@ we,
    <!-- Contact List Popup -->
    <div class="popup popupcon" id="popupcon">
       <div class="contactpopup">
-         <h3 id="heading">HUBUNGI</h3>
+         <h3 id="heading">Contact</h3>
 
          <!-- Contact List -->
          <!-- Contact 1 -->
          <div class="contact-item">
             <div class="contact-text">
-               <p>Rudy</p>
-               <p id="dua">(Ayah Pengantin Lelaki)</p>
+               <p>-----</p>
+               <p id="dua">(Groom's father)</p>
             </div>
             <div class="contact-icons">
                <a href="tel:+60128022788">
@@ -381,7 +381,7 @@ we,
                   <i class="fa-regular fa-circle-check"
                      style="font-size:20px; vertical-align:middle; margin-right:5px;"></i>
                </span>
-               Hadir
+               Attending
             </button>
 
             <button id="tidakhadirBtn">
@@ -389,7 +389,7 @@ we,
                   <i class="fa-regular fa-circle-xmark"
                      style="font-size:20px; vertical-align:middle; margin-right:5px;"></i>
                </span>
-               Tidak Hadir
+               Not attending
             </button>
 
          </div> <!-- End of Button Row Wrapper -->
@@ -404,14 +404,14 @@ we,
 
             <div class="container m-4 pl-4">
                <div class="field">
-                  <label class="label" for="namaHadir">Nama</label>
+                  <label class="label" for="namaHadir">Name</label>
                   <div class="control">
                      <input id="namaHadir" class="input" type="text" placeholder="Nama anda" name="nama_tetamu_hadir"
                         required />
                   </div>
                </div>
 
-               <div class="field">
+               <div class="field" display:none;">
                   <label class="label" for="telefonHadir">No. Telefon</label>
                   <div class="control">
                      <input id="telefonHadir" class="input" type="tel" pattern="[0-9]{10,11}" placeholder="0123456789"
@@ -500,4 +500,5 @@ we,
 </body>
 
 </html>
+
 
