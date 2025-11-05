@@ -316,7 +316,7 @@ body {
   color: #45556b;
   line-height: 0.1;
   font-family: "Amsterdamone";
-  src: url("fonts/Amsterdameone.ttf") format("truetype");
+  src: url("fonts/Amsterdamone.ttf") format("truetype");
   letter-spacing: 2px;
 }
 
@@ -1512,6 +1512,7 @@ h2#countdowntitle {
   display: none !important;
   /* forces it to stay hidden */
 }
+
 
 
 
