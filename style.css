@@ -3,28 +3,32 @@ body {
   padding: 0;
   width: 100%;
   display: flex;
-  justify-content: center;  /* center horizontally */
-  align-items: flex-start;  /* stick content to top */
+  justify-content: center;
+  /* center horizontally */
+  align-items: flex-start;
+  /* stick content to top */
   min-height: 100vh;
   background: #f8f8f8;
   overflow-x: hidden;
 }
 
- /* CURTAINS */
+/* CURTAINS */
 .curtain {
   position: fixed;
   top: 0;
   width: 50%;
   height: 100%;
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.98) 0%,   /* almost white with blue tint */
-    rgba(255, 255, 255, 0.99) 100%  /* very light blue */
-  );
+  background: linear-gradient(to bottom,
+      rgba(255, 255, 255, 0.98) 0%,
+      /* almost white with blue tint */
+      rgba(255, 255, 255, 0.99) 100%
+      /* very light blue */
+    );
   transform-style: preserve-3d;
   transition: all 4s ease-in-out;
   z-index: 2000;
-  box-shadow: inset 0 0 30px rgba(0,0,0,0.15); /* soft depth inside */
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.15);
+  /* soft depth inside */
 }
 
 /* Left curtain */
@@ -33,8 +37,10 @@ body {
   transform-origin: left;
   transform: rotateY(0deg);
   z-index: 10;
-  border-right: 3px solid rgb(255, 255, 255); /* subtle bluish edge */
-  box-shadow: 5px 0 20px rgba(0,0,0,0.25);         /* outside shadow */
+  border-right: 3px solid rgb(255, 255, 255);
+  /* subtle bluish edge */
+  box-shadow: 5px 0 20px rgba(0, 0, 0, 0.25);
+  /* outside shadow */
 }
 
 /* Right curtain */
@@ -43,24 +49,29 @@ body {
   transform-origin: right;
   z-index: 9;
   border-left: 3px solid rgba(255, 255, 255, 0.911);
-  box-shadow: -5px 0 20px rgba(0,0,0,0.25);
+  box-shadow: -5px 0 20px rgba(0, 0, 0, 0.25);
 }
 
 /* Open animation */
-.open .left-curtain { transform: rotateY(-100deg); }
-.open .right-curtain { transform: rotateY(100deg); }
+.open .left-curtain {
+  transform: rotateY(-100deg);
+}
+
+.open .right-curtain {
+  transform: rotateY(100deg);
+}
 
 
 /* LOGO */
 .logo {
   width: 200px;
   height: 200px;
-  background-image: url('https://i.ibb.co/602srx0L/f-200-x-200-px-3.png');
+  background-image: url('https://i.ibb.co/gFQDLw1T/f-200-x-200-px-1.png');
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
   top: 50%;
-  right: -100px; 
+  right: -100px;
   transform: translateY(-50%);
   cursor: pointer;
   animation: pulseZoom 2s ease-in-out infinite;
@@ -68,8 +79,15 @@ body {
 }
 
 @keyframes pulseZoom {
-  0%, 100% { transform: translateY(-50%) scale(1); }
-  50% { transform: translateY(-50%) scale(1.05); }
+
+  0%,
+  100% {
+    transform: translateY(-50%) scale(1);
+  }
+
+  50% {
+    transform: translateY(-50%) scale(1.05);
+  }
 }
 
 /* Wrapper handles horizontal drift */
@@ -79,8 +97,10 @@ body {
   animation-name: drift;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
-  z-index: 1;   /* 👈 Lower than curtain */
-  pointer-events: none; /* snow won’t block clicks */
+  z-index: 1;
+  /* 👈 Lower than curtain */
+  pointer-events: none;
+  /* snow won’t block clicks */
 }
 
 /* Snowflake itself falls + twinkles */
@@ -91,29 +111,52 @@ body {
   animation-name: fall, twinkle;
   animation-timing-function: linear, ease-in-out;
   animation-iteration-count: infinite, infinite;
-  z-index: 1;   /* 👈 Keep low */
+  z-index: 1;
+  /* 👈 Keep low */
 }
 
 /* Falling down */
 @keyframes fall {
-  to { transform: translateY(900px); }
+  to {
+    transform: translateY(900px);
+  }
 }
 
 /* Gentle side-to-side drift */
 @keyframes drift {
-  0%   { transform: translateX(0); }
-  50%  { transform: translateX(30px); }
-  100% { transform: translateX(-30px); }
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(30px);
+  }
+
+  100% {
+    transform: translateX(-30px);
+  }
 }
 
 /* Twinkling */
 @keyframes twinkle {
-  0%, 100% { opacity: 0.9; }
-  50%      { opacity: 0.4; }
+
+  0%,
+  100% {
+    opacity: 0.9;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
 }
 
 /* prevent horizontal scroll */
-.mobile-frame, .scroll-container, .content, .page2 { overflow-x: hidden; }
+.mobile-frame,
+.scroll-container,
+.content,
+.page2 {
+  overflow-x: hidden;
+}
 
 /* MOBILE FRAME */
 .mobile-frame {
@@ -125,10 +168,11 @@ body {
   border-radius: 0px;
   box-shadow: 0px 0px black;
   overflow: hidden;
-  background-image: url('https://i.ibb.co/gQPKzWN/Floral-Watercolor-Illustration-Wedding-Invitation-430-x-820-px-1.png');
-  background-size: contain;   /* make sure image fits */
+  background-image: url('https://i.ibb.co/Wp5FP5GT/bg-shadow.png');
+  background-size: contain;
+  /* make sure image fits */
   background-repeat: repeat;
-background-position: top center;
+  background-position: top center;
 }
 
 
@@ -139,20 +183,25 @@ background-position: top center;
   max-width: 430px;
   margin: 0 auto;
   height: 100%;
-  overflow-y: hidden; /* 🔒 lock scroll initially */
+  overflow-y: hidden;
+  /* 🔒 lock scroll initially */
   display: block;
   flex-direction: column;
-  padding-bottom: 300px; /* ⬅️ adds breathing space at the end */
+  padding-bottom: 300px;
+  /* ⬅️ adds breathing space at the end */
 
 
   /* Firefox */
-  scrollbar-width: none; /* fully hide scrollbar in Firefox */
-  -ms-overflow-style: none; /* IE/Edge legacy */
+  scrollbar-width: none;
+  /* fully hide scrollbar in Firefox */
+  -ms-overflow-style: none;
+  /* IE/Edge legacy */
 }
 
 /* Chrome, Safari, Edge */
 .scroll-container::-webkit-scrollbar {
-  width: 0;  /* hide scrollbar */
+  width: 0;
+  /* hide scrollbar */
 }
 
 .scroll-container::-webkit-scrollbar-track {
@@ -165,10 +214,13 @@ background-position: top center;
 
 /* PAGE 1 CONTENT */
 .content {
-  flex: 0 0 844px;   /* maintain full frame height */
+  flex: 0 0 844px;
+  /* maintain full frame height */
   display: flex;
-  justify-content: center;  /* horizontal center */
-  align-items: center;  /* align image to top */
+  justify-content: center;
+  /* horizontal center */
+  align-items: center;
+  /* align image to top */
   position: relative;
   z-index: 1;
 }
@@ -178,9 +230,10 @@ background-position: top center;
   width: 100%;
   max-width: 430px;
   height: 100%;
-  max-height:720px;
+  max-height: 720px;
   display: block;
-  margin: 0 auto; /* centers block horizontally */
+  margin: 0 auto;
+  /* centers block horizontally */
 }
 
 /* PAGE 2 CONTENT */
@@ -191,8 +244,10 @@ background-position: top center;
   justify-content: flex-start;
   align-items: center;
   padding-top: 20px;
-  height: auto;          /* content decides height */
-  min-height: 500px;     /* keeps min spacing */
+  height: auto;
+  /* content decides height */
+  min-height: 500px;
+  /* keeps min spacing */
 }
 
 .arabic-text {
@@ -201,24 +256,26 @@ background-position: top center;
   margin: 0 0 13px 0;
   font-family: 'Almarai', sans-serif;
   font-size: 36px;
-  font-weight: 300;      
+  font-weight: 300;
   text-align: center;
-  color: #434634;
-  transform: scaleX(1.3);  /* make Arabic wider */
+  color: #45556b;
+  transform: scaleX(1.3);
+  /* make Arabic wider */
 }
 
 .parents-group {
   text-align: center;
-  color: #434634;
-  font-family: 'Fahkwang';
-  margin-bottom: 10px;  /* spacing below group */
+  color: #45556b;
+  font-family: 'League Spartan';
+  margin-bottom: 10px;
+  /* spacing below group */
   margin-top: 10px;
 }
 
 /* 🔹 Parent 1 */
 .parent1-text {
   margin: 0;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 1.3;
 }
@@ -226,110 +283,118 @@ background-position: top center;
 /* 🔹 "&" symbol */
 .parent2-text {
   margin: 2px 0;
-  font-size: 14px;
-  font-weight: 400;   
+  font-size: 18px;
+  font-weight: 400;
   line-height: 1.2;
 }
 
 /* 🔹 Parent 2 */
 .parent3-text {
   margin: 0;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 1.3;
 }
 
 
 .aluan-text {
-  margin: 13px auto;  
-  font-size: 12px;       
-  font-style: normal;    
+  margin: 13px auto;
+  font-size: 16px;
+  font-style: normal;
   text-align: center;
-  color: #434634;
-  line-height: 1.4;      
-  max-width: 310px;      
-  font-family: 'Fahkwang';
+  color: #45556b;
+  line-height: 1.4;
+  max-width: 310px;
+  font-family: 'League Spartan';
   font-weight: 300;
 }
 
 .couple-text {
-  margin: 0px;    
-  font-size: 35px;      
+  margin: 0px;
+  font-size: 40px;
   font-weight: 450;
   text-align: center;
-  color:#bf9042;
+  color: #45556b;
   line-height: 0.1;
-  font-family: 'Great Vibes', cursive;
+  font-family: 'Luxurious Script', cursive;
   letter-spacing: 2px;
 }
 
 .date-text,
 .tempat-text,
 .hour-text {
-  font-size: 12px;
+  font-size: 16px;
   font-style: normal;
   text-align: center;
-  color: #434634;
-  line-height: 1.5;
+  color: #45556b;
+  line-height: 1.4;
   max-width: 320px;
   margin-left: auto;
   margin-right: auto;
-  font-family: 'Fahkwang';
+  font-family: 'League Spartan';
 }
 
 .tempat1-text,
 .date1-text,
 .hour1-text {
-  font-size: 12px;
+  font-size: 16px;
   font-style: normal;
   text-align: center;
-  color: #434634;
-  line-height: 1.2;
+  color: #45556b;
+  line-height: 1.0;
   max-width: 320px;
   margin-left: auto;
   margin-right: auto;
-  font-family: 'Fahkwang';
+  font-family: 'League Spartan';
 }
 
 /* Independent styling for D'Kayangan Ballroom */
 .ballroom-name {
-  font-size: 12px;      /* bigger font */
-  font-weight: 400;     /* bold */
-  color: #434634;
-  line-height: 1.2;     /* reduces spacing between lines */
-  display: inline;      /* keep it inline with <br> breaks */
-  margin-bottom: 0;     /* remove extra bottom margin */
+  font-size: 16px;
+  /* bigger font */
+  font-weight: 300;
+  /* bold */
+  color: #45556b;
+  line-height: 1.2;
+  /* reduces spacing between lines */
+  display: inline;
+  /* keep it inline with <br> breaks */
+  margin-bottom: 0;
+  /* remove extra bottom margin */
 }
 
 
-.date-text { 
-  font-weight: 400; 
-  margin-bottom: 0; 
-}
-.date1-text { 
-  font-weight: 200; 
-  margin-top: 0; 
-  margin-bottom: 4px; 
+.date-text {
+  font-weight: 400;
+  margin-bottom: 0;
 }
 
-.tempat-text { 
-  font-weight: 400; 
-  margin-bottom: 0; 
-}
-.tempat1-text { 
-  font-weight: 200; 
-  margin-top: 0; 
-  margin-bottom: 4px; 
+.date1-text {
+  font-weight: 200;
+  margin-top: 0;
+  margin-bottom: 4px;
 }
 
-.hour-text { 
-  font-weight: 400; 
-  margin-bottom: 0; 
+.tempat-text {
+  font-weight: 400;
+  margin-bottom: 0;
 }
-.hour1-text { 
-  font-weight: 200; 
-  margin-top: 0; 
-  margin-bottom: 60px; 
+
+.tempat1-text {
+  font-weight: 200;
+  margin-top: 0;
+  margin-bottom: 4px;
+}
+
+.hour-text {
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.hour1-text {
+  font-weight: 200;
+  margin-top: 0;
+  margin-bottom: 60px;
 }
 
 /* 🔹 Kotak Atur Cara Majlis */
@@ -337,20 +402,23 @@ background-position: top center;
   position: relative;
   border-radius: 25px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
-  background: rgba(255, 255, 255, 0.4);
-  width: 250px;
-  margin: 0 auto 30px;   /* ada ruang bawah */
+  background: rgba(255, 255, 255, 0);
+  width: 280px;
+  margin: 0 auto 30px;
+  /* ada ruang bawah */
   z-index: 1;
-  padding: 25px 15px;    /* padding lebih kemas */
+  padding: 25px 15px;
+  /* padding lebih kemas */
 }
 
 /* 🔹 Tajuk utama */
 .box-text h3 {
-  font-size: 12px;
+  font-size: 16px;
   text-align: center;
-  color: #434634;
-  margin: 0 0 30px 0;     /* jarak bawah tajuk */
-  font-family: 'Fahkwang';
+  color: #45556b;
+  margin: 0 0 25px 0;
+  /* jarak bawah tajuk */
+  font-family: 'League Spartan';
   font-weight: 400;
   letter-spacing: 1px;
   padding-top: 12px;
@@ -358,23 +426,26 @@ background-position: top center;
 
 /* 🔹 Subtajuk atau waktu */
 .box-text h4 {
-  margin: 8px 0 2px 0;    /* spacing atas bawah */
-  font-size: 12px;
+  margin: 8px 0 2px 0;
+  /* spacing atas bawah */
+  font-size: 16px;
   text-align: center;
-  color: #434634;
-  font-family: 'Fahkwang';
+  color: #45556b;
+  font-family: 'League Spartan';
   font-weight: 400;
 }
 
 /* 🔹 Perkara/aktiviti */
 .box-text p {
-  margin: 0 0 20px 0;     /* spacing setiap line */
-  font-size: 12px;
+  margin: 0 0 16px 0;
+  /* spacing setiap line */
+  font-size: 16px;
   text-align: center;
-  color: #434634;
-  font-family: 'Fahkwang';
+  color: #45556b;
+  font-family: 'League Spartan';
   font-weight: 200;
-  line-height: 1.4;       /* jarak antara baris */
+  line-height: 1.4;
+  /* jarak antara baris */
 }
 
 /* 🔹 Line khusus untuk setiap aktiviti */
@@ -382,37 +453,42 @@ background-position: top center;
 .majlis4-text,
 .majlis6-text,
 .majlis8-text {
-  margin: 6px 0;          /* spacing sekata */
-  font-size: 12px;
+  margin: 6px 0;
+  /* spacing sekata */
+  font-size: 15px;
   text-align: center;
-  color: #434634;
-  font-family: 'Fahkwang';
+  color: #45556b;
+  font-family: 'League Spartan';
   font-weight: 400;
   line-height: 1.4;
 }
 
 /* === DOA BOX CONTAINER === */
-.doa-box { 
-  flex: 0 0 auto;  
+.doa-box {
+  flex: 0 0 auto;
   display: flex;
-  flex-direction: column;   /* stack vertically */
-  justify-content: flex-start; 
-  align-items: center;      
-  padding: 20px 0 40px;     /* atas 20px, bawah 40px */
-  height: auto;             /* let content decide height */
+  flex-direction: column;
+  /* stack vertically */
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px 0 40px;
+  /* atas 20px, bawah 40px */
+  height: auto;
+  /* let content decide height */
   max-height: 180px;
 }
 
 
 /* 🔹 Arabic wrapper */
 #doa-arab {
-  margin-bottom: 10px;      /* jarak ke Melayu doa */
-  text-align: center;       
+  margin-bottom: 10px;
+  /* jarak ke Melayu doa */
+  text-align: center;
 }
 
 #doa-arab h3 {
   margin: 0;
-  color: #434634;
+  color: #45556b;
   font-family: 'Almarai', sans-serif;
   font-weight: 800;
   font-size: 50px;
@@ -420,109 +496,121 @@ background-position: top center;
 
 /* 🔹 Melayu wrapper */
 #doa-melayu {
-  margin-top: 0;            /* kawal jarak atas */
-  margin-bottom: 30px;      /* jarak ke countdown */
-  max-width: 300px;         /* kemas dalam frame */
+  margin-top: 0;
+  /* kawal jarak atas */
+  margin-bottom: 30px;
+  /* jarak ke countdown */
+  max-width: 300px;
+  /* kemas dalam frame */
 }
 
 #doa-melayu p {
-  font-size: 12px;      
-  color: #434634;
-  font-family: 'Fahkwang';
+  font-size: 16px;
+  color: #45556b;
+  font-family: 'League Spartan';
   font-weight: 200;
   text-align: justify;
-  text-align-last: center;  /* line last center */
-  line-height: 1.6;  
-  margin: 0;                /* reset default p */
-  padding: 0 10px;          /* ruang kiri kanan */
+  text-align-last: center;
+  /* line last center */
+  line-height: 1.6;
+  margin: 0;
+  /* reset default p */
+  padding: 0 10px;
+  /* ruang kiri kanan */
 }
 
 
 /*=== MENGHITUNG HARI ===*/
 .menghitung-hari {
   height: 150px;
-  display: block; /* fixed: absolute is not valid for display */
+  display: block;
+  /* fixed: absolute is not valid for display */
 }
 
-h2#countdowntitle{
-  font-family: 'Fahkwang';
-  font-size: 12px;
+h2#countdowntitle {
+  font-family: 'League Spartan';
+  font-size: 16px;
   font-weight: 400;
   text-align: center;
-  color: #434634;
+  color: #45556b;
   margin: 50px 0 0;
 }
 
 #countdown-timer {
   display: flex;
   justify-content: center;
-  gap: 12px;         /* jarak antara kotak */
+  gap: 12px;
+  /* jarak antara kotak */
   margin-top: 25px;
-  flex-wrap: wrap;   /* turun ke bawah kalau skrin sempit */
-  margin-bottom: 50px; /* extra space below countdown */
+  flex-wrap: wrap;
+  /* turun ke bawah kalau skrin sempit */
+  margin-bottom: 50px;
+  /* extra space below countdown */
 }
 
 .time-box {
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.5);
   border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   padding: 2px;
   width: 60px;
   text-align: center;
-  font-family: 'Fahkwang';
+  font-family: 'League Spartan', sans-serif;
 
   /* 👇 Add pulse animation */
   animation: pulseBox 2s ease-in-out infinite;
 }
 
 .time-box p {
+  font-size: 18px;
   font-weight: 400;
   margin: 0;
-  color: #434634;
+  color: #45556b;
   padding-top: 10px;
-  font-family: 'Fahkwang';
-  font-size: 16px;
-
-
 }
 
 .time-box h3 {
-  font-family: 'Fahkwang';
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 400;
   margin: 6px 10px;
-  color: #434634;
+
+  color: #45556b;
 }
 
 /* Pulse effect */
 @keyframes pulseBox {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: scale(1);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   }
+
   50% {
     transform: scale(1.03);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
   }
 }
 
 
 .kehadiran-container h2 {
   text-align: center;
-  font-size: 12px;
-  font-family: 'Fahkwang';
+  font-size: 16px;
+  font-family: 'League Spartan';
   font-weight: 400;
-  color: #434634;
+  color: #45556b;
   margin-bottom: px;
 }
 
 .kehadiran {
   display: flex;
   justify-content: center;
-  gap: 80px;         /* jarak antara kotak */
+  gap: 80px;
+  /* jarak antara kotak */
   margin-top: 20px;
-  flex-wrap: wrap;   /* turun ke bawah kalau skrin sempit */
+  flex-wrap: wrap;
+  /* turun ke bawah kalau skrin sempit */
 }
 
 .kehadiran-box {
@@ -530,25 +618,25 @@ h2#countdowntitle{
   padding: 2px;
   width: 100px;
   text-align: center;
-  font-family: 'Fahkwang';
+  font-family: 'League Spartan';
 }
 
 .kehadiran-box p {
   font-size: 36px;
   font-weight: 300;
   margin: 0;
-  color: #434634;
+  color: #45556b;
 }
 
 .kehadiran-box h3 {
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 200;
   margin-top: 6px;
-  color: #434634;
+  color: #45556b;
   margin-bottom: 20px;
 }
 
-:root { 
+:root {
   --navbar-height: 80px;
 }
 
@@ -556,12 +644,13 @@ h2#countdowntitle{
 .message {
   display: flex;
   flex-direction: column;
-  gap: 12px;                 /* spacing between header and ucapanList */
+  gap: 12px;
+  /* spacing between header and ucapanList */
   padding: 0 12px;
-  font-family: 'Fahkwang';
+  font-family: "League Spartan";
   font-size: 12px;
   font-weight: 300;
-  color: #434634;
+  color: #45556b;
   text-align: center;
   width: 100%;
   box-sizing: border-box;
@@ -574,7 +663,8 @@ h2#countdowntitle{
   justify-content: flex-start;
   align-items: center;
   gap: 12px;
-  padding: 8px 8px calc(var(--navbar-height) + 16px) 8px; /* bottom padding accounts for navbar */
+  padding: 8px 8px calc(var(--navbar-height) + 16px) 8px;
+  /* bottom padding accounts for navbar */
   height: 400px;
   width: 100%;
   overflow-y: auto;
@@ -586,12 +676,16 @@ h2#countdowntitle{
 #ucapanList .message {
   display: block;
   padding: 8px 12px;
-  background-color: #f0f2f5;  /* bubble background */
+  background-color: #f0f2f5;
+  /* bubble background */
   border-radius: 12px;
-  width: 90%;                 /* slightly narrower than container */
+  width: 90%;
+  /* slightly narrower than container */
   box-sizing: border-box;
-  white-space: normal;        /* allow text wrap */
-  word-wrap: break-word;      /* break long words */
+  white-space: normal;
+  /* allow text wrap */
+  word-wrap: break-word;
+  /* break long words */
 }
 
 
@@ -608,27 +702,28 @@ h2#countdowntitle{
 
 .ucapan-text {
   margin: 0;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 200;
   font-style: italic;
-  font-family: 'Fahkwang';
+  font-family: "League Spartan";
   line-height: 1;
-  color: #434634;
+  color: #45556b;
   padding: 0 30px 0;
 
 }
 
 .ucapan-nama {
   margin-top: 4px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
-  font-family: 'Fahkwang';
-  color: #434634;
+  font-family: "League Spartan";
+
+  color: #45556b;
 }
 
 .message h2 {
-  font-size: 12px;         
-  font-family: 'Fahkwang';
+  font-size: 16px;
+  font-family: "League Spartan";
   text-align: center;
   font-weight: 400;
   margin: 0 0 0;
@@ -642,8 +737,10 @@ h2#countdowntitle{
   width: 100%;
   max-width: 430px;
   margin: 0 auto;
-  left: 0;  /* needed for auto margin */
-  right: 0; /* needed for auto margin */
+  left: 0;
+  /* needed for auto margin */
+  right: 0;
+  /* needed for auto margin */
   height: 80px;
   background-color: rgba(255, 254, 248, 0.5);
   display: flex;
@@ -663,19 +760,23 @@ h2#countdowntitle{
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
-    background-color: rgba(255, 254, 248, 0.5);
+  background-color: rgba(255, 254, 248, 0.5);
 
 }
 
 /* Buttons container */
 .navgang {
   display: flex;
-  justify-content: space-around;  /* evenly spread buttons */
+  justify-content: space-around;
+  /* evenly spread buttons */
   align-items: center;
   width: 100%;
-  max-width: 600px;               /* optional max width */
-  flex-wrap: wrap;                 /* wrap on very small screens */
-  gap: clamp(8px, 5%, 40px);      /* flexible spacing */
+  max-width: 600px;
+  /* optional max width */
+  flex-wrap: wrap;
+  /* wrap on very small screens */
+  gap: clamp(8px, 5%, 40px);
+  /* flexible spacing */
   padding: 0 10px;
   box-sizing: border-box;
 }
@@ -686,7 +787,8 @@ h2#countdowntitle{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex: 1;                         /* even width distribution */
+  flex: 1;
+  /* even width distribution */
   min-width: 50px;
   text-decoration: none;
   box-sizing: border-box;
@@ -694,17 +796,20 @@ h2#countdowntitle{
 
 /* Icon inside button */
 .navgang a.nav-btn .material-symbols-outlined {
-  font-size: 35px !important;      /* bigger icon */
-  color: #434634;
+  font-size: 35px !important;
+  /* bigger icon */
+  color: #45556b;
+  /* icon color */
   padding-top: 4px;
 }
 
 /* Label below icon */
 .navgang a.nav-btn .label {
-  font-size: 12px !important;      /* bigger label font */
-  font-family: 'Fahkwang';
+  font-size: 15px !important;
+  /* bigger label font */
+  font-family: "League Spartan";
   font-weight: 400;
-  color: #434634;
+  color: #45556b;
   margin-top: 4px;
   text-align: center;
   white-space: nowrap;
@@ -722,29 +827,31 @@ h2#countdowntitle{
   }
 
   .navgang a.nav-btn .label {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 
 
 /* === Calendar Popup === */
 
-    /* Calendar Overlay */
-    .popup.popupcal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: transparent; /* fully clear, not dark */
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    }
+/* Calendar Overlay */
+.popup.popupcal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  /* fully clear, not dark */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
 
-    :root {
-  --navbar-height: 80px; /* default nav height */
+:root {
+  --navbar-height: 80px;
+  /* default nav height */
 }
 
 /* Popup */
@@ -753,7 +860,7 @@ h2#countdowntitle{
   border-radius: 19px;
   text-align: center;
   box-shadow: 5px 5px 15px rgba(47, 68, 88, 0.3);
-  background-color: rgba(250, 248, 245, 0.9);
+  background-color: rgba(255, 255, 255, 0.8);
 
 
   width: 90%;
@@ -762,7 +869,8 @@ h2#countdowntitle{
 
   /* Dynamic position above nav */
   position: fixed;
-  bottom: calc(var(--navbar-height) + 10px); /* 10px gap above nav */
+  bottom: calc(var(--navbar-height) + 10px);
+  /* 10px gap above nav */
   left: 50%;
   transform: translateX(-50%);
   box-sizing: border-box;
@@ -772,20 +880,22 @@ h2#countdowntitle{
 /* Heading */
 .calendarpopup h3 {
   margin-bottom: 10px;
-  font-family: 'Fahkwang';
+  font-family: "League Spartan";
   font-weight: 600;
-  font-size: 12px !important;
-  color: #434634;
+  font-size: 20px;
+  color: #45556b;
+  ;
 }
 
 /* Paragraph */
 .calendarpopup p {
   line-height: 1.4;
-  margin-bottom: 12px;
-  font-family: 'Fahkwang';
+  margin-bottom: 15px;
+  font-family: "League Spartan";
   font-weight: 280;
-  font-size: 12px;
-  color: #45556b;;
+  font-size: 14px;
+  color: #45556b;
+  ;
 }
 
 /* Button Container */
@@ -808,7 +918,7 @@ h2#countdowntitle{
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 12px;
+  font-size: 16px;
   height: 38px;
   font-family: "Lexend";
   font-weight: 280;
@@ -817,8 +927,9 @@ h2#countdowntitle{
 /* Android Button */
 #androidBtn {
   border: 1px solid #45556b;
+  ;
   border-radius: 9px;
-background-color: rgba(122, 142, 116, 0.05);
+  background-color: rgba(255, 255, 255, 0.8);
   color: #45556b;
 }
 
@@ -826,7 +937,7 @@ background-color: rgba(122, 142, 116, 0.05);
 #iosBtn {
   border: 1px solid #45556b;
   border-radius: 9px;
-background-color: rgba(122, 142, 116, 0.05);
+  background-color: rgba(255, 255, 255, 0.8);
   color: #45556b;
 }
 
@@ -838,96 +949,116 @@ background-color: rgba(122, 142, 116, 0.05);
   width: 100%;
   height: var(--navbar-height);
   background-color: #fff;
-  box-shadow: 0 -5px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 
-    /* === Contact Popup ===*/
+/* === Contact Popup ===*/
 
-    /* Contact Overlay */
+/* Contact Overlay */
 
 .popup.popupcon {
-  display: none; /* hidden by default */
+  display: none;
+  /* hidden by default */
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: transparent; /* fully clear */
+  background: transparent;
+  /* fully clear */
   justify-content: center;
-  align-items: flex-end;   /* align popup to bottom */
-  padding-bottom: calc(var(--navbar-height) + 10px); /* 10px above bottom nav */
+  align-items: flex-end;
+  /* align popup to bottom */
+  padding-bottom: calc(var(--navbar-height) + 10px);
+  /* 10px above bottom nav */
   z-index: 1000;
   box-sizing: border-box;
 }
 
-/* 🔹 Contact Box */
+/* Contact Box */
 .contactpopup {
   padding: 22px;
   border-radius: 30px;
   width: 90%;
   max-width: 322px;
+  height: 280px;
   box-shadow: 5px 5px 15px rgba(47, 68, 88, 0.3);
-  background-color: rgba(250, 248, 245, 0.9);
+  background-color: rgba(255, 255, 255, 0.8);
   text-align: center;
-  margin: 0 auto;
 }
 
-/* 🔹 Contact Heading */
-.contactpopup h3 {
-  font-family: 'Fahkwang';
-  font-size: 12px;
-  font-weight: 600;
-  color: #434634;
-  margin-bottom: 10px;
-}
-
-/* 🔹 Contact Item Layout */
+/* Contact Item Layout */
 .contact-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 8px 0;
-  width: 100%;
-  margin: 0 auto;
-  gap: 10px;
+  width: 380px;
+  position: relative;
+  left: -20px;
+
 }
 
-/* 🔹 Text Section */
 .contact-text {
   flex: 1;
+}
+
+#heading {
+  margin: 0 0 0;
+  font-size: 16px;
+}
+
+.contactpopup h3 {
+  text-align: center;
+  font-family: "League Spartan";
+  font-size: 13px;
+  font-weight: 600;
+  color: #45556b;
+  ;
+  margin-bottom: 0 0 0;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.contactpopup p {
+  margin: 0 20px;
+  font-size: 16px;
+  line-height: 1.2;
+  color: #45556b;
+  ;
+  font-family: "League Spartan";
   text-align: left;
-  margin-left: 10px;
-}
-
-.contactpopup p,
-#dua {
-  margin: 0;
-  font-size: 12px;
-  line-height: 1.4;
-  color: #434634;
-  font-family: 'Fahkwang';
+  padding-left: 10px;
 }
 
 #dua {
+  margin: 0 20px;
+  font-size: 16px;
+  line-height: 1.2;
+  color: #45556b;
+  ;
+  font-family: "League Spartan";
   font-style: italic;
   font-weight: 300;
+  text-align: left;
 }
 
-/* 🔹 Icon Section */
 .contact-icons {
   display: flex;
-  gap: 10px;
-  justify-content: flex-end;
-  align-items: center;
+  gap: 12px;
+  text-align: right;
+  padding-right: 40px;
+
 }
 
 .contact-icon {
-  font-size: 24px;
-  color: #434634;
+  font-size: 35px;
+  color: #45556b;
+  ;
   cursor: pointer;
   transition: color 0.2s;
 }
@@ -936,137 +1067,156 @@ background-color: rgba(122, 142, 116, 0.05);
   color: #000;
 }
 
+/* === Location Popup === */
 
 /* Location Overlay */
 .popup.popuploc {
-    display: none;               /* hidden by default */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: transparent;     /* fully clear */
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
+  display: none;
+  /* hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  /* fully clear */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
 }
 
 /* Location Box */
 .locationpopup {
-    padding: 10px 20px 20px;
-    border-radius: 19px;
-    text-align: center;
-    box-shadow: 5px 5px 15px rgba(47, 68, 88, 0.3);
-  background-color: rgba(250, 248, 245, 0.9);
+  padding: 10px 20px 20px;
+  border-radius: 19px;
+  text-align: center;
+  box-shadow: 5px 5px 15px rgba(47, 68, 88, 0.3);
+  background-color: rgba(255, 255, 255, 0.8);
 
-    width: 90%;                  /* responsive width */
-    max-width: 368px;
-    height: auto;                /* adjust height to content */
+  width: 90%;
+  /* responsive width */
+  max-width: 368px;
+  height: auto;
+  /* adjust height to content */
 
-    /* Position above bottom nav */
-    position: fixed;
-    bottom: calc(var(--navbar-height) + 10px); /* 10px gap above nav */
-    left: 50%;
-    transform: translateX(-50%);
+  /* Position above bottom nav */
+  position: fixed;
+  bottom: calc(var(--navbar-height) + 10px);
+  /* 10px gap above nav */
+  left: 50%;
+  transform: translateX(-50%);
 
-    box-sizing: border-box;
-    z-index: 1000;
+  box-sizing: border-box;
+  z-index: 1000;
 }
 
 /* Location H3 */
 .locationpopup h3 {
-    font-family: 'Fahkwang';
-    font-weight: 600;
-    font-size: 12px !important;
-    position: relative;
-    top: 10px;
-  color: #434634;
+  font-family: "League Spartan";
+  font-weight: 600;
+  font-size: 13px;
+  position: relative;
+  top: 10px;
+  color: #45556b;
 }
 
 .locationpopup p {
-    line-height: 1.2;
-    margin: 10px 0px 20px;
-    font-family: 'Fahkwang';
-    font-size: 12px !important;
-    font-weight: 200;
-    position: relative;
-    top: 10px;
-  color: #434634;
+  line-height: 1.2;
+  margin: 10px 0px 20px;
+  font-family: "League Spartan";
+  font-weight: 200;
+  position: relative;
+  top: 10px;
+  color: #45556b;
 }
 
 /* Button Row */
 .buttoned-row {
-    display: flex;
-    justify-content: center;  /* center the buttons */
-    gap: 10px;                /* space between buttons */
-    flex-wrap: wrap;          /* allow wrapping on small screens */
+  display: flex;
+  justify-content: center;
+  /* center the buttons */
+  gap: 10px;
+  /* space between buttons */
+  flex-wrap: wrap;
+  /* allow wrapping on small screens */
 }
 
 /* Buttons inside popup */
 .buttoned-row button {
-    flex: 1 1 auto;           /* grow and shrink within container */
-    max-width: calc(50% - 5px); /* two buttons max width each, minus gap */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;                  /* spacing between icon and text */
-    padding: 10px 0;           /* adjust padding to fit inside popup */
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 12px;
-    height: 38px;
-    font-family: 'Fahkwang';
-    font-weight: 280;
+  flex: 1 1 auto;
+  /* grow and shrink within container */
+  max-width: calc(50% - 5px);
+  /* two buttons max width each, minus gap */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  /* spacing between icon and text */
+  padding: 10px 0;
+  /* adjust padding to fit inside popup */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  height: 38px;
+  font-family: "League Spartan";
+  font-weight: 280;
 }
 
 /* Android button */
-#androidedBtn, #iosedBtn {
-    border-radius: 9px;
-  color: #434634;
-    border: 1px solid #45556b;
-    background-color: rgba(255, 255, 255, 0.8);
+#androidedBtn,
+#iosedBtn {
+  border-radius: 9px;
+  color: #45556b;
+  border: 1px solid #45556b;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 /* QR Link Section */
 .video-link {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 10px;  /* space below map buttons */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  /* space below map buttons */
 }
 
 .video-link a {
-    text-decoration: none;
-  color: #434634;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  text-decoration: none;
+  color: #45556b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .video-link img.qr {
-    width: 120px;  /* adjust size */
-    height: 120px;
-    margin-bottom: 0px;
-    cursor: pointer;
-    margin-top: 20px;
+  width: 120px;
+  /* adjust size */
+  height: 120px;
+  margin-bottom: 0px;
+  cursor: pointer;
+  margin-top: 20px;
 }
 
 .video-link p {
-    font-family: 'Fahkwang';
-    font-size: 12px;
-    font-weight: 400;
-    max-width: 160px;
-    text-align: center;
-    margin-bottom: 10px;
-    margin-top: 0px;}
+  font-family: "League Spartan", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  max-width: 160px;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 0px;
+}
 
 
 /* === RSVP Popup === */
 :root {
-  --navbar-height: 80px; /* adjust if your nav height changes */
-  --popup-width: 368px;  /* standard width for all popups */
-  --popup-height: 180px; /* standard height for all popups */
+  --navbar-height: 80px;
+  /* adjust if your nav height changes */
+  --popup-width: 368px;
+  /* standard width for all popups */
+  --popup-height: 180px;
+  /* standard height for all popups */
 }
 
 /* Overlay wrapper */
@@ -1074,7 +1224,7 @@ background-color: rgba(122, 142, 116, 0.05);
   display: none;
   position: fixed;
   inset: 0;
-  background: transparent; 
+  background: transparent;
   justify-content: center;
   align-items: flex-end;
   z-index: 9999;
@@ -1086,34 +1236,39 @@ background-color: rgba(122, 142, 116, 0.05);
   padding: 10px 20px 30px;
   border-radius: 18px;
   width: 90%;
-  max-width: var(--popup-width, 368px); /* ✅ fallback */
-  max-height: 300px;   /* collapsed height */
+  max-width: var(--popup-width, 368px);
+  /* ✅ fallback */
+  max-height: 300px;
+  /* collapsed height */
   box-shadow: 5px 5px 15px rgba(47, 68, 88, 0.3);
-  background-color: rgba(250, 248, 245, 0.9);
+  background-color: rgba(255, 255, 255, 0.8);
   text-align: center;
   box-sizing: border-box;
-  transition: max-height 0.4s ease; /* smooth expand */
+  transition: max-height 0.4s ease;
+  /* smooth expand */
   overflow: hidden;
 }
 
 
 /* Expanded state */
 .rsvppopup.expanded {
-  max-height: 2000vh;  /* ✅ Expand upward more */
-  overflow-y: auto;  /* scroll if too tall */
+  max-height: 2000vh;
+  /* ✅ Expand upward more */
+  overflow-y: auto;
+  /* scroll if too tall */
 }
 
 /* Title */
 .rsvppopup h3 {
-  font-size: 12px;
-  color: #434634;
+  font-size: 16px;
+  color: #45556b;
   margin-top: 10px;
   text-align: center;
-  font-size: 12px !important;
-  font-family: 'Fahkwang';
+  font-family: 'League Spartan';
   font-weight: 600;
   position: relative;
-  padding-top: 15px;  /* ⬅️ shifts everything inside lower */
+  padding-top: 15px;
+  /* ⬅️ shifts everything inside lower */
 
 
 }
@@ -1122,21 +1277,25 @@ background-color: rgba(122, 142, 116, 0.05);
 /* Wrapper for Hadir / Tidak Hadir buttons */
 .hadir-row {
   display: flex;
-  justify-content: center;   /* center both buttons */
-  gap: 10px;                 /* space between them */
+  justify-content: center;
+  /* center both buttons */
+  gap: 10px;
+  /* space between them */
   margin-top: 30px;
 }
 
 /* General button styles */
 .hadir-row button {
-  flex: 1;                              /* equal width */
+  flex: 1;
+  /* equal width */
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;                             /* gap between icon and text */
+  gap: 5px;
+  /* gap between icon and text */
   padding: 10px 0;
-  font-size: 12px;
-  font-family: 'Fahkwang';
+  font-size: 14px;
+  font-family: "League Spartan", sans-serif;
   font-weight: 500;
   border-radius: 8px;
   cursor: pointer;
@@ -1146,17 +1305,19 @@ background-color: rgba(122, 142, 116, 0.05);
 
 /* Hadir button */
 #hadirBtn {
-background-color: rgba(122, 142, 116, 0.05);
-  border: 1px solid #434634;
-  color: #434634;
-  
+  background-color: rgba(255, 255, 255, 0.8);
+  /* semi-transparent white */
+  border: 1px solid #45556b;
+  color: #45556b;
+
 }
 
 /* Tidak Hadir button */
 #tidakhadirBtn {
-background-color: rgba(122, 142, 116, 0.05);
-  border: 1px solid #434634;
-  color: #434634;
+  background-color: rgba(255, 255, 255, 0.8);
+  /* semi-transparent white */
+  border: 1px solid #45556b;
+  color: #45556b;
 }
 
 
@@ -1169,34 +1330,39 @@ background-color: rgba(122, 142, 116, 0.05);
 
 
 /* Form (inside expanded popup, no need separate box shadow) */
-#rsvpForm,#rsvpFormtidak {
+#rsvpForm,
+#rsvpFormtidak {
   display: none;
-  margin-top:15px;
-  width: 100%;          /* ✅ full width inside popup */
+  margin-top: 15px;
+  width: 100%;
+  /* ✅ full width inside popup */
 }
 
-#rsvpForm div{
+#rsvpForm div {
   margin-bottom: 8px;
 }
 
-#rsvpForm label,#rsvpFormtidak label {
+#rsvpForm label,
+#rsvpFormtidak label {
   font-weight: 500;
-  color: #434634;
-  font-family: 'Fahkwang';
-  font-size: 12px;
+  color: #45556b;
+  ;
+  font-family: "League Spartan";
+  font-size: 16px;
   margin-bottom: 5px;
   display: block;
 }
 
-#rsvpForm input, #rsvpFormtidak input
- {
+#rsvpForm input,
+#rsvpFormtidak input {
   padding: 6px 10px;
   border-radius: 6px;
   border: 1px solid #ccc;
   font-size: 13px;
-  color: #434634;
-  font-family: 'Fahkwang';
-  font-size: 12px;
+  color: #45556b;
+  ;
+  font-family: "League Spartan";
+  font-size: 16px;
   width: 100%;
   box-sizing: border-box;
   margin-bottom: 10px;
@@ -1209,15 +1375,17 @@ background-color: rgba(122, 142, 116, 0.05);
   padding: 6px 10px;
   border-radius: 6px;
   border: 1px solid #ccc;
-  font-size: 12px;
-  color: #434634;
-  font-family: 'Fahkwang';
+  font-size: 16px;
+  color: #45556b;
+  font-family: "League Spartan";
   width: 100%;
   box-sizing: border-box;
   margin-bottom: 10px;
-  height: 38px;   /* slightly taller for dropdown arrow */
+  height: 38px;
+  /* slightly taller for dropdown arrow */
   background-color: #fff;
-  appearance: none;      /* remove default browser style */
+  appearance: none;
+  /* remove default browser style */
   -webkit-appearance: none;
   -moz-appearance: none;
   background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='5'%3E%3Cpath fill='%2345556b' d='M0 0l5 5 5-5z'/%3E%3C/svg%3E");
@@ -1230,9 +1398,10 @@ background-color: rgba(122, 142, 116, 0.05);
   padding: 6px 10px;
   border-radius: 6px;
   border: 1px solid #ccc;
-  color: #434634;
-  font-family: 'Fahkwang';;  
-  font-size: 12px;
+  font-size: 13px;
+  color: #45556b;
+  font-family: "League Spartan";
+  font-size: 16px;
   width: 100%;
   box-sizing: border-box;
   margin-bottom: 10px;
@@ -1243,55 +1412,58 @@ background-color: rgba(122, 142, 116, 0.05);
   padding: 6px 10px;
   border-radius: 6px;
   border: 1px solid #ccc;
-  color: #434634;
-  font-family: 'Fahkwang'; 
-  font-size: 12px;
+  font-size: 13px;
+  color: #45556b;
+  font-family: "League Spartan";
+  font-size: 16px;
   width: 100%;
   box-sizing: border-box;
   margin-bottom: 10px;
   height: 100px;
 }
-    
 
-  /* === Form Buttons === */
-            #rsvpForm button {
-            padding: 10px 18px;
-            font-size: 12px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 600;
-            font-family: 'Fahkwang';
-            margin-right: 10px;
-            }
 
-            #rsvpFormtidak button {
-            padding: 10px 18px;
-            font-size: 12px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 600;
-            font-family: 'Fahkwang';
-            margin-right: 10px;
-            }
+/* === Form Buttons === */
+#rsvpForm button {
+  padding: 10px 18px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: "League Spartan", sans-serif;
+  margin-right: 10px;
+}
 
-            #hantarBtn,#hantarBtntidak {
-            background-color:  #434634;
-            color: #fff;
-            }
+#rsvpFormtidak button {
+  padding: 10px 18px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: "League Spartan", sans-serif;
+  margin-right: 10px;
+}
 
-            #hantarBtn:hover {
-            background-color: #434634;
-            }
+#hantarBtn,
+#hantarBtntidak {
+  background-color: #45556b;
+  color: #fff;
+}
 
-            #batalBtn,#batalBtntidak{
-            background-color: #ccc;
-            color: #333;
-            }
+#hantarBtn:hover {
+  background-color: #45556b;
+}
 
-            #batalBtn:hover {
-            background-color: #bbb;
+#batalBtn,
+#batalBtntidak {
+  background-color: #ccc;
+  color: #333;
+}
+
+#batalBtn:hover {
+  background-color: #bbb;
 }
 
 /* Style switcher container */
@@ -1300,7 +1472,8 @@ background-color: rgba(122, 142, 116, 0.05);
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  display: none; /* hidden until curtain opens */
+  display: none;
+  /* hidden until curtain opens */
   z-index: 100;
 }
 
@@ -1308,42 +1481,34 @@ background-color: rgba(122, 142, 116, 0.05);
 #styleSwitcher {
   padding: 8px 14px;
   font-size: 14px;
-  font-family: 'Fahkwang';
-  border: 2px solid #434634;
+  font-family: "League Spartan", sans-serif;
+  border: 2px solid #45556b;
   border-radius: 8px;
   background: #ffffffdd;
   color: #333;
   cursor: pointer;
   outline: none;
   transition: all 0.3s ease;
-  appearance: none; /* removes default arrow */
+  appearance: none;
+  /* removes default arrow */
   -webkit-appearance: none;
   -moz-appearance: none;
   background-image: url("data:image/svg+xml;utf8,<svg fill='%2345556b' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
   background-repeat: no-repeat;
   background-position: right 10px center;
   background-size: 16px;
-  padding-right: 34px; /* space for arrow */
+  padding-right: 34px;
+  /* space for arrow */
 }
 
 /* Hover / focus effect */
-#styleSwitcher:hover, #styleSwitcher:focus {
+#styleSwitcher:hover,
+#styleSwitcher:focus {
   border-color: #2d3b4f;
   background-color: #f4f6f9;
 }
 
 #styleControl {
-  display: none !important; /* forces it to stay hidden */
-}
-.map-link a {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;                       /* space between icon and text */
-  text-decoration: none;
-  color: #434634;
-  font-family: 'Fahkwang'; 
-  font-size: 12px;
-  padding: 8px 10px;
-  border-radius: 10px;
-  box-sizing: border-box;
+  display: none !important;
+  /* forces it to stay hidden */
 }
